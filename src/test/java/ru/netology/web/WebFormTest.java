@@ -20,58 +20,58 @@ public class WebFormTest {
         $("[data-test-id=order-success]").shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
     }
 
-//    @Test
-//    public void shouldNotGetSuccessOrderByNameTestCase1() {
-//        open("http://localhost:9999");
-//        SelenideElement form = $(".form");
-//        form.$("[data-test-id=name] input").setValue("Alex");
-//        form.$("[data-test-id=phone] input").setValue("+79990000000");
+    @Test
+    public void shouldNotGetSuccessOrderByNameTestCase1() {
+        open("http://localhost:9999");
+        SelenideElement form = $(".form");
+        form.$("[data-test-id=name] input").setValue("Alex");
+        form.$("[data-test-id=phone] input").setValue("+79990000000");
+        form.$("[data-test-id=agreement]").click();
+        form.$(".button__text").click();
+        $("[data-test-id=order-success]").shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
+    }
+
+    @Test
+    public void shouldNotGetSuccessOrderByNameTestCase2() {
+        open("http://localhost:9999");
+        SelenideElement form = $(".form");
+        form.$("[data-test-id=name] input").setValue("");
+        form.$("[data-test-id=phone] input").setValue("+79990000000");
+        form.$("[data-test-id=agreement]").click();
+        form.$(".button__text").click();
+        $("[data-test-id=order-success]").shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
+    }
+
+    @Test
+    public void shouldNotGetSuccessOrderByPhoneTestCase1() {
+        open("http://localhost:9999");
+        SelenideElement form = $(".form");
+        form.$("[data-test-id=name] input").setValue("Александр");
+        form.$("[data-test-id=phone] input").setValue("89990000000");
+        form.$("[data-test-id=agreement]").click();
+        form.$(".button__text").click();
+        $("[data-test-id=order-success]").shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
+    }
+
+    @Test
+    public void shouldNotGetSuccessOrderByPhoneTestCase2() {
+        open("http://localhost:9999");
+        SelenideElement form = $(".form");
+        form.$("[data-test-id=name] input").setValue("Александр");
+        form.$("[data-test-id=phone] input").setValue("");
+        form.$("[data-test-id=agreement]").click();
+        form.$(".button__text").click();
+        $("[data-test-id=order-success]").shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
+    }
+
+    @Test
+    public void shouldNotGetSuccessOrderByFlag() {
+        open("http://localhost:9999");
+        SelenideElement form = $(".form");
+        form.$("[data-test-id=name] input").setValue("Александр");
+        form.$("[data-test-id=phone] input").setValue("+79990000000");
 //        form.$("[data-test-id=agreement]").click();
-//        form.$(".button__text").click();
-//        $("[data-test-id=order-success]").shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
-//    }
-//
-//    @Test
-//    public void shouldNotGetSuccessOrderByNameTestCase2() {
-//        open("http://localhost:9999");
-//        SelenideElement form = $(".form");
-//        form.$("[data-test-id=name] input").setValue("");
-//        form.$("[data-test-id=phone] input").setValue("+79990000000");
-//        form.$("[data-test-id=agreement]").click();
-//        form.$(".button__text").click();
-//        $("[data-test-id=order-success]").shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
-//    }
-//
-//    @Test
-//    public void shouldNotGetSuccessOrderByPhoneTestCase1() {
-//        open("http://localhost:9999");
-//        SelenideElement form = $(".form");
-//        form.$("[data-test-id=name] input").setValue("Александр");
-//        form.$("[data-test-id=phone] input").setValue("89990000000");
-//        form.$("[data-test-id=agreement]").click();
-//        form.$(".button__text").click();
-//        $("[data-test-id=order-success]").shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
-//    }
-//
-//    @Test
-//    public void shouldNotGetSuccessOrderByPhoneTestCase2() {
-//        open("http://localhost:9999");
-//        SelenideElement form = $(".form");
-//        form.$("[data-test-id=name] input").setValue("Александр");
-//        form.$("[data-test-id=phone] input").setValue("");
-//        form.$("[data-test-id=agreement]").click();
-//        form.$(".button__text").click();
-//        $("[data-test-id=order-success]").shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
-//    }
-//
-//    @Test
-//    public void shouldNotGetSuccessOrderByFlag() {
-//        open("http://localhost:9999");
-//        SelenideElement form = $(".form");
-//        form.$("[data-test-id=name] input").setValue("Александр");
-//        form.$("[data-test-id=phone] input").setValue("+79990000000");
-////        form.$("[data-test-id=agreement]").click();
-//        form.$(".button__text").click();
-//        $("[data-test-id=order-success]").shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
-//    }
+        form.$(".button__text").click();
+        $("[data-test-id=order-success]").shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
+    }
 }
