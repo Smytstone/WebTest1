@@ -71,6 +71,6 @@ public class WebFormTest {
         form.$("[data-test-id=phone] input").setValue("+79990000000");
 //        form.$("[data-test-id=agreement]").click();
         form.$(".button__text").click();
-        $("[data-test-id=agreement].input_invalid").should(exist);
+        $("[data-test-id=agreement].input_invalid").should(visible);
     }
 }
